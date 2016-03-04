@@ -1,0 +1,19 @@
+function myReplace(str, before, after) {
+  var arr = str.split(' ');
+  for (var i in arr) {
+    if (arr[i] === before) {
+      arr[i] = arr[i].replace(before, after);
+      var capsArr = arr[i];
+      if (before.charCodeAt(0) < 97) {
+        capsArr = capsArr.split('');
+        capsArr[0] = capsArr[0].toUpperCase();
+        capsArr = capsArr.join('');
+        arr.splice(i, 1, capsArr);
+       }
+    }  
+  }
+  str = arr.join(' ');
+  return str;
+}
+
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
