@@ -1,0 +1,29 @@
+function fearNotLetter(str) {
+  str = str.split('');
+  var result = '';
+  
+  for (var i in str) {
+    str[i] = str[i].charCodeAt(0);
+  }
+  
+  var checkCharCode = str[0];
+  
+  for (var j in str) {
+    if (str[j] !== checkCharCode) {
+      result = str[j]-1;
+      str = str.slice(j,str.length-1);
+      break;
+    }
+    checkCharCode++;
+  }
+  
+  if (j == str.length-1) {
+    result = undefined;
+  } else {
+  result = String.fromCharCode(result);
+  }
+  
+  return result;
+}
+
+fearNotLetter("abce");
