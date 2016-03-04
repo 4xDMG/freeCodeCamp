@@ -1,0 +1,21 @@
+function translate(str) {
+  var re=/^[aeiou]$/i;
+  var i = 0;
+  var strConsts = '';
+  str = str.split('');
+  if (re.test(str[0]) === true) {    
+    str.push('way');
+    str = str.join('');
+  } else {
+    while (re.test(str[i]) === false) {
+      strConsts += str[i];      
+      i++;
+    }
+    str.splice(0,i,'');
+    str.push(strConsts + 'ay');
+    str = str.join('');
+  }
+  return str;
+}
+
+translate("paragraphs");
