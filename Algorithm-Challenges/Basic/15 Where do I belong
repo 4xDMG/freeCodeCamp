@@ -1,0 +1,13 @@
+function where(arr, num) {
+  // Find my place in this sorted array.
+  
+  arr.push(num);
+  arr.sort(function(a, b) {
+    return a - b;
+  } );
+  index = arr.indexOf(num);
+  
+  return index;
+}
+
+where([2, 5, 10], 15);
