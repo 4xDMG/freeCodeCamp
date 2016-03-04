@@ -1,0 +1,21 @@
+function steamroller(arr) {
+  // I'm a steamroller, baby
+  arr = arr.reduce(function(a, b) {
+    return a.concat(b);
+  }, []);
+  for (var i in arr) {
+    if (Array.isArray(arr[i])) {
+      arr = arr.reduce(function(a, b) {
+        return a.concat(b);
+      }, []);
+      if (Array.isArray(arr[i])) {
+        arr = arr.reduce(function(a, b) {
+          return a.concat(b);
+        }, []);
+      }
+    }
+  }
+  return arr;
+}
+
+steamroller([1, [2], [3, [[4]]]]);
