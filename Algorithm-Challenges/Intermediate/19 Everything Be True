@@ -1,0 +1,25 @@
+function every(collection, pre) {
+  // Is everyone being true?
+  var result=false;
+  for (var i in collection) {
+    var colObj=collection[i];
+    if (colObj.hasOwnProperty(pre)) {
+      if (colObj[pre]===undefined || colObj[pre]===null || colObj[pre]==='') {
+        return false;
+      } else if (typeof colObj[pre] === 'string' || typeof colObj[pre] === 'boolean') {
+        result=true;
+      } else if (typeof colObj[pre] === 'number') {
+        if (colObj[pre]!==NaN) {
+          return false;
+        } else {
+          result=true;
+        }
+      }
+    } else {
+      return false;
+    }
+  }
+  return result;
+}
+
+every([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
