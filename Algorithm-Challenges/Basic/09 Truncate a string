@@ -1,0 +1,26 @@
+var num = 0;
+
+function truncate(str, num) {
+  // Clear out that junk in your trunk
+   var num1 = str.length;
+  
+  if (str.length > num) {
+    if (str.length > 3) {
+      if (num > 3)   {
+        str = str.slice(0, num-3);
+        str += "...";
+      }  else {
+        str = str.slice(0, num);
+        str += "...";
+      }
+  } else {
+      str = str.slice(0, num);
+      str += "...";
+    }
+  }
+  
+  return str;
+  
+}
+
+truncate("Absolutely Longer", 2);
