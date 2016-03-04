@@ -1,0 +1,19 @@
+function where(collection, source) {
+  var arr = [];
+  var key = Object.keys(source);
+
+  for (var i in collection) {
+    var k = 0;
+    for (var j in key) {
+      if (collection[i][key[j]] === source[key[j]]) {
+        k++;
+      }
+     }
+    if (k === key.length) {
+        arr.push(collection[i]);
+    }
+  }
+  return arr;
+}
+
+where([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
