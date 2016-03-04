@@ -1,0 +1,17 @@
+function sumAll(arr) {
+  var a = arr[0];
+  var b = arr[1];
+  var high = Math.max(a,b);
+  var low = Math.min(a,b);
+  var diff = high - low;
+  a = low;
+  var newArr = [a];
+  for (i=0;i<diff;i++){
+    newArr.push(newArr[i]+1);
+    sum=newArr.join('+');
+    sum = eval(sum);
+  }
+  return sum;
+}
+
+sumAll([1, 4]);
