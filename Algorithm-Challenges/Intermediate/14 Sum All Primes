@@ -1,0 +1,24 @@
+function sumPrimes(num) {
+  
+  function primeTest(testNum) {
+    for (j=2;j<=testNum;j++) {
+      if (i%j===0 && i!==j) {
+        return false;
+      } else if (i%j===0 && i===j){
+        return true;
+      }
+    }
+  }
+  
+  var primeArr = [];
+  for (i=2; i<=num; i++) {
+    if (primeTest(i) === true) {
+      primeArr.push(i);
+    }
+  }
+  num = eval(primeArr.join('+'));
+  return num;
+}
+
+
+sumPrimes(977);
