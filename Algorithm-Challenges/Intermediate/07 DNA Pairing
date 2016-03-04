@@ -1,0 +1,17 @@
+function pair(str) {
+  str = str.split('');
+  for (var i in str) {
+    if (str[i] === "G") {
+      str[i] = ["G","C"];
+    } else if (str[i] === "C") {
+      str[i] = ["C","G"];
+    } else if (str[i] === "T") {
+      str[i] = ["T","A"];
+    } else if (str[i] === "A") {
+      str[i] = ["A","T"];
+    }
+  }
+  return str;
+}
+
+pair("ATCGA");
