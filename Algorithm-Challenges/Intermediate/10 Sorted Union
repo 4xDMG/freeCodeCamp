@@ -1,0 +1,14 @@
+function unite(arr1, arr2, arr3) {
+  var result=[];
+  for (var i in arguments) {
+    for (var j in arguments[i]) {
+      result.push(arguments[i][j]);
+    }
+  }
+  result=result.filter(function(item, pos) {
+    return result.indexOf(item)==pos;
+  });
+  return result;
+}
+
+unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
