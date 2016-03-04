@@ -1,0 +1,16 @@
+function palindrome(str) {
+  // Good luck!
+  str = str.toLowerCase().replace(/\W|_/g,'');
+  newword = str.split('').reverse().join('');
+  
+    
+  if (str === newword)
+  return true;
+  
+  else
+    return false;
+}
+
+
+
+palindrome("0_0 (: /-\ :) 0_0");
