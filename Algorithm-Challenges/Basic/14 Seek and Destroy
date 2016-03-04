@@ -1,0 +1,20 @@
+function destroyer(arr) {
+  // Remove all the values
+  var toDestroy = [];
+  for (var i in arguments) {
+   toDestroy.push(arguments[i]);
+  }  
+  arr = arguments[0].filter(function(element){
+   var keepThis = true;   
+   for (var j in toDestroy) {
+     if (element === toDestroy[j]) {
+       keepThis = false;
+     }
+   }
+   return keepThis;
+   });
+   
+  return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
