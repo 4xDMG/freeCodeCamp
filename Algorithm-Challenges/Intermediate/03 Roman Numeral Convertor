@@ -1,0 +1,15 @@
+function convert(num) {
+  var romanNumerals = ['M','CM','D','C','XC','L','XL','X','IX','V','IV','I'];
+  var numbers = [1000,900,500,100,90,50,40,10,9,5,4,1];
+  var result = '';
+  for (var i in numbers) {
+    while (num >= numbers[i]) {
+      result = result + romanNumerals[i];
+      num = num - numbers[i];
+    }
+  }
+  
+ return result;
+}
+
+convert(36);
