@@ -1,0 +1,28 @@
+function end(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  
+  //Remove all none alphanumerical characters
+  str = str.replace(/\W|_/g, '');
+  
+  //Set variables for determining where to compare str and target
+  var strLength = str.length - 1;
+  var targetLength = target.length - 1;
+  
+  //get variable to compare to target
+  var compareStr = str.substr(strLength-targetLength);
+  
+  //Compare comparestr to target
+  
+  if (compareStr === target) {
+    return true;
+  } else {
+    return false;
+  }
+  
+  
+  
+  return compareStr;
+}
+
+end("Walking on water and developing software from a specification are easy if both are frozen", "specification");
