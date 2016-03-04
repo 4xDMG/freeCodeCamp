@@ -1,0 +1,28 @@
+function sumFibs(num) {
+  var fib = 1;
+  var fibA = 0;
+  var fibB = 1;
+  var fibArr = [1];
+ while (num > fib) {
+   fib = fibA + fibB;
+   fibArr.push(fib);
+   fibA = fibB;
+   fibB = fib; 
+ }
+  for (var i in fibArr) {
+    if (odd(fibArr[i]) === false) {
+      fibArr.splice(i,1);
+    }
+    if (fibArr[i] > num) {
+      fibArr.splice(i,1);
+    }
+  }
+  fib = eval(fibArr.join('+'));
+  return fib;
+}
+
+function odd(test) {
+  return (test % 2) == 1;
+}
+
+sumFibs(4);
