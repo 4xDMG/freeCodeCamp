@@ -1,0 +1,18 @@
+function rot13(str) { // LBH QVQ VG!
+  str = str.split('');
+ for (var i in str) {
+   if (str[i].charCodeAt() > 64 && str[i].charCodeAt() < 91) {
+     str[i] = str[i].charCodeAt() + 13;
+     if (str[i] > 90) {
+       str[i] = String.fromCharCode(str[i]-26);
+     } else {
+       str[i] = String.fromCharCode(str[i]);
+     }
+   }
+ }
+  str = str.join('');
+  return str;
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
