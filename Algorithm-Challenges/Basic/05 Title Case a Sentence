@@ -1,0 +1,19 @@
+function titleCase(str) {
+  //convert whole string to lower case
+  str = str.toLowerCase();
+  
+  //split each word into an array
+  myArray = str.split(' ');
+  
+  //Change first letter of each word into upper case
+  for (i = 0; i < myArray.length; i++) {
+    newArray = myArray[i].split('');
+    newArray[0] = newArray[0].toUpperCase();
+    myArray[i] = newArray.join('');
+  }
+  
+  myArray = myArray.join(' ');
+  return myArray;
+}
+
+titleCase("I'm a little tea pot");
