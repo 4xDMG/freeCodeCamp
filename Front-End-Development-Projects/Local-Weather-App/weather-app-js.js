@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	var apiUrl = '';
-	var apiid = "&APPID=2e794e05f4fada3d54a33b81f9542a5f"
+	var apiid = "&APPID=my ID goes here"
 	var city='';
 	var tempK = 0;
 	var currentWeatherCode = '';
